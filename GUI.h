@@ -5,6 +5,10 @@
 #include "structs.h"
 
 class GUI {
+	const SDL_Color snake_body_colour{ 0, 255, 0 };
+	const SDL_Color snake_head_colour{ 0, 255, 0 };
+	const SDL_Color food_colour{ 255, 0, 0 };
+
 	const int c_window_width;
 	const int c_window_height;
 

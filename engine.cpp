@@ -9,6 +9,8 @@ engine::engine(const int window_width, const int window_height, const int board_
 	: _game(board_width, board_height), c_board_width(board_width), c_board_height(board_height), c_snake_starting_size(snake_starting_size),
 	_max_framerate(max_framerate), c_increase_framerate(increase_framerate), c_control(control) {
 
+	srand(time(NULL));
+
 	restart();
 
 	if (loadGUI) {
@@ -18,6 +20,8 @@ engine::engine(const int window_width, const int window_height, const int board_
 	else {
 		_gui = NULL;
 	}
+
+	create_food();
 }
 
 engine::~engine() {
@@ -40,8 +44,6 @@ void engine::restart() {
 	_game._snake._head = { snake_init_x, snake_init_y + c_snake_starting_size - 1 };
 	_game._snake._tail = 0;
 	_game._snake._direction = snake_direction::down;
-
-	create_food();
 }
 
 void engine::create_food() {
@@ -146,7 +148,7 @@ void engine::get_direction() {
 void engine::run_game() {
 	bool collision = false;
 	_gui->draw();
-	//SDL_Delay(5000);
+	SDL_Delay(5000);
 	do {
 		auto start = std::chrono::high_resolution_clock::now();
 

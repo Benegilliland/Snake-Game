@@ -3,10 +3,10 @@
 int main(int argc, char* argv[]) {
 	const int window_width = 1500;
 	const int window_height = 900;
-	const int board_width = 300;
-	const int board_height = 200;
+	const int board_width = 240;
+	const int board_height = 160;
 	const int snake_starting_size = 5;
-	const int max_framerate = 300; // Set to 0 to remove framerate limit
+	const int max_framerate = 600; // Set to 0 to remove framerate limit
 	const bool loadGUI = true;
 	const bool increase_framerate = false; // Whether to increase the framerate limit (game speed) every time food is eaten
 	const control_method control = control_method::computer;

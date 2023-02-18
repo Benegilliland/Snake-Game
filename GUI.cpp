@@ -59,13 +59,13 @@ void GUI::draw() {
 	SDL_SetRenderDrawColor(_renderer, 0, 0, 0, 255);
 	SDL_RenderClear(_renderer);
 
-	SDL_SetRenderDrawColor(_renderer, 255, 0, 0, 255);
+	SDL_SetRenderDrawColor(_renderer, food_colour.r, food_colour.g, food_colour.b, 255);
 	SDL_RenderFillRect(_renderer, &_food);
 
-	SDL_SetRenderDrawColor(_renderer, 0, 255, 0, 255);
+	SDL_SetRenderDrawColor(_renderer, snake_body_colour.r, snake_body_colour.g, snake_body_colour.b, 255);
 	SDL_RenderFillRects(_renderer, _snakeBody.data(), _snakeBody.size());
 
-	SDL_SetRenderDrawColor(_renderer, 0, 255, 0, 255);
+	SDL_SetRenderDrawColor(_renderer, snake_head_colour.r, snake_head_colour.g, snake_head_colour.b, 255);
 	SDL_RenderFillRect(_renderer, &_snakeHead);
 
 	SDL_RenderCopy(_renderer, _scoreLabel, NULL, &_scoreLabelSize);
